@@ -3,6 +3,7 @@
 - useEffect применен для игры дилера
 - стабильная версия*/
 import "./styles.css";
+import Image from 'next/image';
 import { useState, useEffect } from "react";
 
 export default function Dealer({ startes }) {
@@ -44,10 +45,10 @@ export default function Dealer({ startes }) {
       "8",
       "9",
       "10",
-      "валет",
-      "дама",
-      "король",
-      "туз"
+      "В",
+      "Д",
+      "К",
+      "Т"
     ];
     const suits = ["пики", "черви", "бубны", "трефы"];
 
@@ -73,10 +74,10 @@ export default function Dealer({ startes }) {
       "8",
       "9",
       "10",
-      "валет",
-      "дама",
-      "король",
-      "туз"
+      "В",
+      "Д",
+      "К",
+      "Т"
     ];
     const suits = ["пики", "черви", "бубны", "трефы"];
 
@@ -98,9 +99,9 @@ export default function Dealer({ startes }) {
 
     dealerCards.forEach((card) => {
       const value = card.split(" ")[0];
-      if (value === "туз") {
+      if (value === "Т") {
         aceCount++;
-      } else if (["валет", "дама", "король"].includes(value)) {
+      } else if (["В", "Д", "К"].includes(value)) {
         score += 10;
       } else {
         score += parseInt(value) || 0;
@@ -125,9 +126,9 @@ export default function Dealer({ startes }) {
 
     playerCards.forEach((card) => {
       const value = card.split(" ")[0];
-      if (value === "туз") {
+      if (value === "Т") {
         aceCount++;
-      } else if (["валет", "дама", "король"].includes(value)) {
+      } else if (["В", "Д", "К"].includes(value)) {
         score += 10;
       } else {
         score += parseInt(value) || 0;
@@ -154,9 +155,9 @@ export default function Dealer({ startes }) {
       let score = 0;
       dealerCards.forEach((card) => {
         const value = card.split(" ")[0];
-        if (value === "туз") {
+        if (value === "Т") {
           aceCount++;
-        } else if (["валет", "дама", "король"].includes(value)) {
+        } else if (["В", "Д", "К"].includes(value)) {
           score += 10;
         } else {
           score += parseInt(value) || 0;
@@ -356,33 +357,14 @@ export default function Dealer({ startes }) {
   };
 
   return (
-    <div>
-      <h1>Black Jack</h1>
+    <div className="game">
+      <div className="container">
+      <div className="gameHello">
+      <Image className="logoimage1" src="/logo.jpg" width={200}
+        height={200} alt="background" />
       <h2>Привет, {startes.name}</h2>
       <p>Начальная ставка от 1 $</p>
-      <h3>Дилер</h3>
-      <div className="statuses">
-        <div>{dealerBlackJack ? <p>BLACK JACK!!!</p> : ""}</div>
-        <div>{scoreEq ? <p>Статус: Ровно!</p> : ""}</div>
-        <div>{dealerLose ? <p>Статус: Дилер проиграл!</p> : ""}</div>
-        <div>{dealerWin ? <p>Статус: Дилер выиграл!</p> : ""}</div>
-      </div>
-      <div>
-        {hiddenSecCard ? (
-          <>
-            <p>Карты дилера: {dealerCards.map(prettyPrintCards).join("; ")}</p>
-            <p>Счет дилера: {dealerScore}</p>
-          </>
-        ) : (
-          <p>
-            Карты дилера:{" "}
-            {dealerCards.length > 0 ? prettyPrintCards(dealerCards[0]) : ""}
-          </p>
-        )}
-      </div>
-      <div className="tooltip">
-        <span className="tooltiptext">Введи свою ставку</span>
-        <input
+      <input
           type="number"
           className="ui-input-money"
           placeholder="1"
@@ -393,29 +375,58 @@ export default function Dealer({ startes }) {
             const newBid = value < 1 ? 1 : value;
             setCurrentBid(newBid);
           }}
-        />
-      </div>
-      <button disabled={buttonStart} onClick={handleButtonStart}>
+      />
+      <p>Ваш кредит: {gotCredit}</p>
+      <p>Ваша ставка: {currentBid}</p>
+      <div className="buttonblock">
+      <button className="gamebutton" disabled={buttonStart} onClick={handleButtonStart}>
         Start
       </button>
 
-      <button disabled={buttonHit} onClick={handleButtonHit}>
+      <button className="gamebutton" disabled={buttonHit} onClick={handleButtonHit}>
         Hit
       </button>
-      <button disabled={buttonStop} onClick={handleButtonStop}>
+      <button className="gamebutton" disabled={buttonStop} onClick={handleButtonStop}>
         Stop
       </button>
-      <button disabled={buttonDouble} onClick={handleButtonDouble}>
+      <button className="gamebutton" disabled={buttonDouble} onClick={handleButtonDouble}>
         Double
       </button>
-      <button disabled={buttonNext} onClick={handleButtonNext}>
+      <button className="gamebutton" disabled={buttonNext} onClick={handleButtonNext}>
         Next
       </button>
-      <div>Ваш кредит: {gotCredit}</div>
-      <div>Ваша ставка: {currentBid}</div>
+      </div>
+      </div>
+      <div className="statuszone"> 
+      <div className="dealerLeft">
+        <h3>Дилер</h3>
+      
+      <div>
+        {hiddenSecCard ? (
+          <>
+            <p>Карты дилера: <span className="cards"> {dealerCards.map(prettyPrintCards).join("   ")}</span></p>
+            <p>Счет дилера: {dealerScore}</p>
+          </>
+        ) : (
+          <p>
+            Карты дилера:{" "} <span className="cards">
+            {dealerCards.length > 0 ? prettyPrintCards(dealerCards[0]) : ""}</span>
+          </p>
+        )}
+      </div>
+      <div className="statuses">
+        <div>{dealerBlackJack ? <p>BLACK JACK!!!</p> : ""}</div>
+        <div>{scoreEq ? <p>Статус: Ровно!</p> : ""}</div>
+        <div>{dealerLose ? <p>Статус: Дилер проиграл!</p> : ""}</div>
+        <div>{dealerWin ? <p>Статус: Дилер выиграл!</p> : ""}</div>
+      </div>
+      </div>
+        
+        
+      <div className="playerRight">
       <h3>Игрок</h3>
       <div className="global">
-        <p>Карты игрока: {playerCards.map(prettyPrintCards).join("; ")}</p>
+        <p>Карты игрока: <span className="cards">{playerCards.map(prettyPrintCards).join("   ")}</span></p>
 
         <p>Счет игрока: {playerScore}</p>
         <div className="statuses">
@@ -432,6 +443,9 @@ export default function Dealer({ startes }) {
           <div>{playerWin ? <p>Статус: Игрок выиграл!</p> : ""}</div>
         </div>
       </div>
+      </div>
+      </div>
+      </div> 
     </div>
   );
 }

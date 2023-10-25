@@ -1,21 +1,4 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-
-.unitdiv {
-  background-color: rgb(255, 127, 80);
-  border: 10px dotted Tomato;
-}
-
-.throught {
-  text-decoration: 1px line-through;
-  text-decoration-color: black;
-}
-
-.shadowh1 {
-  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
-}
+/*тут правила для dealer.js*/
 
 /*ну очень красивая кнопка входа*/
 .buttonNav {
@@ -25,13 +8,15 @@
   border: none;
   color: #ffffff;
   text-align: center;
+  vertical-align: middle;
   font-size: 28px;
-  padding: 20px;
+  padding: 5px;
   width: 150px;
   height: 70px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
+  
+  
 }
 
 .buttonNav span {
@@ -84,32 +69,116 @@
   font-size: 20px;
 }
 
-.ui-input-money:focus {
-  background-color: lightblue;
+.game {
+  background-color: #B0DFE6;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.ui-input-name:focus {
-  background-color: rgb(140, 118, 235);
+.container {
+  width: 80%; 
+  min-width: 10%;
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction:  column;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
-/*подсказка для ставки*/
-.tooltip {
-  position: relative;
-  display: block;
-  border-bottom: 1px dotted black;
-}
-.tooltiptext {
-  visibility: hidden;
-  position: absolute;
-  margin-left: 120px;
-  width: 120px;
-  background-color: gray;
-  color: black;
+
+
+.gameHello {
+  width: 100%;
   text-align: center;
-  padding: 5px 0;
-  border-radius: 15px;
-  z-index: 1;
+  margin-bottom: 20px;
+  border: 3px solid black;
+  height: 450px;
+  font-family: 'Press Start 2P';
+  color: Teal;
+  text-align: center;
+  vertical-align:bottom;
+  font-size: 25px;
 }
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+
+.ui-input-money {
+  max-width: 200px;
 }
-/*КОНЕЦ подсказка для ставки*/
+.ui-input-money:disabled {
+  background-color: #808080;
+}
+
+.statuszone {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.playerRight {
+  flex: 1;
+  border: 3px solid black;
+  padding: 10px;
+  margin-left: 5px;
+  font-family: 'Press Start 2P';
+  color: DarkSlateGray;
+  text-align: left;
+  vertical-align: top;
+  font-size: 20px;
+  height: 250px;
+}
+
+.dealerLeft {
+  flex: 1;
+  border: 3px solid black;
+  padding: 10px;
+  margin-right: 5px;
+  font-family: 'Press Start 2P';
+  color: gray;
+  text-align: left;
+  vertical-align: top;
+  font-size: 20px;
+  height: 250px;
+
+}
+
+.cards {
+  font-family: 'Oi';
+  color: black;
+  font-size: 25px;
+}
+
+/*для логотипа и кнопок внутри gameHello */
+.logoimage1 {
+  display: block; 
+  margin: 10px auto 0; 
+  text-align: center;
+}
+
+.gamebutton {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #FFCE58;
+  border: 2px solid black;
+  font-family: 'Press Start 2P';
+  color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+  margin: 10px;
+  width: 100px;
+  height: 40px;
+}
+
+.gamebutton:disabled {
+  background-color: #808080;
+}
+
+.buttonblock {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+/*FINISH для логотипа и кнопок внутри gameHello */

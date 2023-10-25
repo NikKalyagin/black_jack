@@ -13,12 +13,14 @@ export default function Player({ startes }) {
 
   return (
     <>
+      
       <button className="buttonRules" onClick={toggleRules}>
         Показать/скрыть правила
       </button>
       {showRules && <Rules />}
       <div> </div>
       <Dealer startes={startes} />
+      
     </>
   );
 }
