@@ -1,0 +1,115 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.unitdiv {
+  background-color: rgb(255, 127, 80);
+  border: 10px dotted Tomato;
+}
+
+.throught {
+  text-decoration: 1px line-through;
+  text-decoration-color: black;
+}
+
+.shadowh1 {
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+}
+
+/*ну очень красивая кнопка входа*/
+.buttonNav {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #f4511e;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 150px;
+  height: 70px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttonNav span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonNav span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonNav:hover span {
+  padding-right: 25px;
+}
+
+.buttonNav:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/*КОНЕЦ -- ну очень красивая кнопка входа*/
+.buttonRules {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: coral;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 380px;
+  height: 70px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 10px;
+  opacity: 0.2;
+}
+
+.buttonRules:hover {
+  opacity: 1;
+}
+
+.global {
+  font-size: 20px;
+}
+
+.ui-input-money:focus {
+  background-color: lightblue;
+}
+
+.ui-input-name:focus {
+  background-color: rgb(140, 118, 235);
+}
+/*подсказка для ставки*/
+.tooltip {
+  position: relative;
+  display: block;
+  border-bottom: 1px dotted black;
+}
+.tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  margin-left: 120px;
+  width: 120px;
+  background-color: gray;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 15px;
+  z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+/*КОНЕЦ подсказка для ставки*/
