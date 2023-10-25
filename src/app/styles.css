@@ -9,12 +9,15 @@
   color: #ffffff;
   text-align: center;
   vertical-align: middle;
-  font-size: 28px;
+  font-size: 24px;
+  font-family: 'Press Start 2P';
   padding: 5px;
-  width: 150px;
-  height: 70px;
+  width: 200px;
+  height: 80px;
   transition: all 0.5s;
   cursor: pointer;
+  margin-left: 10%;
+  margin-top: 10px;
   
   
 }
@@ -52,12 +55,13 @@
   color: #ffffff;
   text-align: center;
   font-size: 28px;
-  padding: 20px;
+  
   width: 380px;
   height: 70px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 10px;
+  margin-left: 15%;
+  margin-top: 20px;
   opacity: 0.2;
 }
 
@@ -75,6 +79,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
 .container {
@@ -86,8 +91,9 @@
   flex-direction:  column;
   justify-content: center;
   align-items: center; 
-  margin-top: 10px;
+  margin-top: 2px;
   margin-bottom: 30px;
+  overflow: auto;
 }
 
 
@@ -168,9 +174,11 @@
   text-align: center;
   vertical-align: middle;
   font-size: 14px;
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
   width: 100px;
-  height: 40px;
+  height: 50px;
 }
 
 .gamebutton:disabled {
@@ -178,7 +186,7 @@
 }
 
 .buttonblock {
-  margin-top: 40px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 /*FINISH для логотипа и кнопок внутри gameHello */

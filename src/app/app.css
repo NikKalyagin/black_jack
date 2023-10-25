@@ -7,6 +7,7 @@
     position: fixed; /* фиксированное положение, чтобы занимать всю область видимости */
     top: 0;
     left: 0;
+    overflow: auto;
   }
 
 
@@ -36,11 +37,12 @@
 
 .ui-input-money,
 .ui-input-name {
-  margin-bottom: 15px;
-  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   border: 5px solid  #FFCE58;
   border-radius: 10px;
   font-family: 'Press Start 2P';
+  font-size: 25px;
   background-color: #B8C5EA;
 }
 
