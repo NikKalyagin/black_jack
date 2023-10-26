@@ -65,7 +65,7 @@ useEffect(() => {
             
             <input
               className="ui-input-name"
-              placeholder="Введи свое имя"
+              placeholder="Имя"
               value={startes.name}
               onChange={(e) => setStartes({ ...startes, name: e.target.value })}
             />

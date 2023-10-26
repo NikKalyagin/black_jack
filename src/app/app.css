@@ -56,6 +56,12 @@
   border: 5px solid #FFCE58;
 }
 
+@media only screen and (max-width: 760px) {
+  .ui-input-money,
+  .ui-input-name {
+    width: 80%;;
+  }
+}
 /*ну очень красивая кнопка входа*/
 .buttonNav1 {
   display: inline-block;

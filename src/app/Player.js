@@ -15,7 +15,7 @@ export default function Player({ startes }) {
     <>
       
       <button className="buttonRules" onClick={toggleRules}>
-        Показать/скрыть правила
+        Правила
       </button>
       {showRules && <Rules />}
       <div> </div>
