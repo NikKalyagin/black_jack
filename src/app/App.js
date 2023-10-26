@@ -1,5 +1,5 @@
 //App.js
-import 'tailwindcss/tailwind.css';
+
 import "./styles.css";
 import "./app.css";
 import Image from 'next/image';
@@ -7,8 +7,6 @@ import WebFont from 'webfontloader';
 
 import { useState, useEffect } from "react";
 import Player from "./Player.js";
-
-import Dealer from "./Dealer.js";
 
 export default function App() {
   const [login, setLogin] = useState(false);
