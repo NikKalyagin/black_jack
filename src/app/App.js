@@ -8,7 +8,7 @@ import WebFont from 'webfontloader';
 import { useState, useEffect } from "react";
 import Player from "./Player.js";
 
-import Dealer from "./Dealer.js";
+
 
 export default function App() {
   const [login, setLogin] = useState(false);
