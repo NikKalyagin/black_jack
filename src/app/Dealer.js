@@ -5,7 +5,7 @@
 import "./styles.css";
 import Image from 'next/image';
 import { useState, useEffect } from "react";
-
+//
 export default function Dealer({ startes }) {
   const [dealerCards, setDealerCards] = useState([]);
   const [playerCards, setPlayerCards] = useState([]);
